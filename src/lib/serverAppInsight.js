@@ -1,21 +1,18 @@
-
+// lib/serverAppInsights.ts
 const appInsights = require('applicationinsights')
 
-let instance = null;
-
-export function getAppInsightsInstance() {
-  if (!instance) {
-    appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
-      .setAutoDependencyCorrelation(true)
-      .setAutoCollectRequests(true)
-      .setAutoCollectPerformance(true)
-      .setAutoCollectExceptions(true)
-      .setAutoCollectDependencies(true)
-      .setAutoCollectConsole(true)
-      .setUseDiskRetryCaching(true)
-      .start();
-
-    instance = appInsights.defaultClient;
-  }
-  return instance;
+console.log(appInsights)
+if (!appInsights.defaultClient) {
+  appInsights.setup(process.env.APP_INSIGHTS_INSTRUMENTATION_KEY)
+    .setAutoCollectRequests(true)
+    .setAutoCollectPerformance(true)
+    .setAutoCollectDependencies(true)
+    .setAutoCollectExceptions(true)
+    .setAutoCollectConsole(true)
+    .start();
 }
+
+const client = appInsights.defaultClient || appInsights.getClient()
+
+console.log(client)
+export { client };
