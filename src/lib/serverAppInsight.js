@@ -3,7 +3,7 @@ const appInsights = require('applicationinsights')
 
 console.log(appInsights)
 if (!appInsights.defaultClient) {
-  appInsights.setup(process.env.APP_INSIGHTS_INSTRUMENTATION_KEY)
+  appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
     .setAutoCollectRequests(true)
     .setAutoCollectPerformance(true)
     .setAutoCollectDependencies(true)
@@ -14,5 +14,4 @@ if (!appInsights.defaultClient) {
 
 const client = appInsights.defaultClient || appInsights.getClient()
 
-console.log(client)
 export { client };
