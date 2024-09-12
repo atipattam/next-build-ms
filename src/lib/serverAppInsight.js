@@ -1,7 +1,12 @@
 // lib/serverAppInsights.ts
-const appInsights = require('applicationinsights')
+const appInsights = require('applicationinsights');
 
-console.log(appInsights)
+// Log to check if applicationinsights is properly imported
+console.log("Application Insights Module:", appInsights);
+
+// Log to check if the connection string is available in production
+console.log("Connection String:", process.env.APPLICATIONINSIGHTS_CONNECTION_STRING);
+
 if (!appInsights.defaultClient) {
   appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
     .setAutoCollectRequests(true)
@@ -9,9 +14,24 @@ if (!appInsights.defaultClient) {
     .setAutoCollectDependencies(true)
     .setAutoCollectExceptions(true)
     .setAutoCollectConsole(true)
+    .setInternalLogging(true, true) // Enable verbose internal logging in production
     .start();
+
+  // Log to check if setup was successful
+  console.log("Application Insights setup completed.");
+} else {
+  // Log if defaultClient is already initialized
+  console.log("Application Insights defaultClient already exists.");
 }
 
-const client = appInsights.defaultClient || appInsights.getClient()
+// Safely assign the client with fallback to getClient()
+const client = appInsights.defaultClient || appInsights.getClient();
+
+// Log to check if the client was initialized
+if (client) {
+  console.log("Application Insights client initialized successfully.");
+} else {
+  console.error("Failed to initialize Application Insights client.");
+}
 
 export { client };
