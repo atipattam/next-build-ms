@@ -8,10 +8,11 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // images: {
-  //  loader : 'custom',
-  //  loaderFile: '/my/image/loader.js'
-  // },
+  images: {
+   loader : 'custom',
+   loaderFile: '/my/image/loader.js',
+   domains: [process.env.NEXT_APP_FRONTDOOR]
+  },
 };
 
 export default nextConfig;
