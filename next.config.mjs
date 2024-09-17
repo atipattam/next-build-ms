@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: "standalone",
   reactStrictMode: false,
   trailingSlash: true,
   eslint: {
@@ -8,9 +8,10 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  images:{
-    minimumCacheTTL : 0
-  }
-}
+  images: {
+   loader : 'custom',
+   loaderFile: '/my/image/loader.js'
+  },
+};
 
-export default nextConfig
+export default nextConfig;
