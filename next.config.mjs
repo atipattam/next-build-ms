@@ -8,6 +8,9 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images:{
+    minimumCacheTTL : 0
+  }
 }
 
 export default nextConfig
