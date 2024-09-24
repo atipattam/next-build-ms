@@ -49,6 +49,7 @@ export async function generateStaticParams() {
 
 export default async function Page2({ params }) {
   const { slug } = params;
+  await getSomething()
   let job = slug
   const splitSlug = slug.split("-");
   const isForm = _last(splitSlug) === "form";
@@ -66,4 +67,4 @@ export default async function Page2({ params }) {
   return isForm ? <TestForm data={data} /> : <TestDescription data={data} slug={slug}/>;
 }
 
-export const revalidate = 30;
+export const revalidate = 60;

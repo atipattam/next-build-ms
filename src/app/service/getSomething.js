@@ -7,13 +7,16 @@ export const getSomething = async () => {
   let allData = {};
   let err = null;
   try {
-    const response = await axios.get(
-      `http://localhost:8000/arise-career-api/v1/career-name/${title}`
-    );
-    console.log(response)
-    if (response.status === 200) {
-      allData = _get(response, "data.data");
-    }
+    // const response = await axios.get(
+    //   `http://localhost:8000/arise-career-api/v1/career-name/${title}`
+    // );
+    // console.log(response)
+    // if (response.status === 200) {
+    //   allData = _get(response, "data.data");
+    // }
+    client.trackEvent({
+      name: `success`,
+    })
   } catch (error) {
     // console.log(error)
     err = {
