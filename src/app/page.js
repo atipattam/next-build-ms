@@ -17,7 +17,7 @@ export default async function Home() {
           width: "100%",
         }}
       >
-        <Link prefetch={false} href="/career/page1">
+        <Link href="/career/page1">
           <Image
             width={40}
             height={40}
@@ -25,21 +25,21 @@ export default async function Home() {
             alt="img1"
           />
         </Link>
-        <Link prefetch={false} href="/career/page2">
-        <Image
-          width={40}
-          height={40}
-          src="/assets/img/icon/next-blue.png"
-          alt="img2"
-        />
+        <Link href="/career/page2">
+          <Image
+            width={40}
+            height={40}
+            src="/assets/img/icon/next-blue.png"
+            alt="img2"
+          />
         </Link>
-        <Link prefetch={false} href="/career/page3">
-        <Image
-          width={40}
-          height={40}
-          src="/assets/img/logo/arise-logo.png"
-          alt="img3"
-        />
+        <Link href="/career/page3">
+          <Image
+            width={40}
+            height={40}
+            src="/assets/img/logo/arise-logo.png"
+            alt="img3"
+          />
         </Link>
       </div>
       <div
@@ -49,24 +49,30 @@ export default async function Home() {
           width: "100%",
         }}
       >
-        <Image
-          width={40}
-          height={40}
-          src="/assets/img/icon/close.png"
-          alt="img4"
-        />
-        <Image
-          width={40}
-          height={40}
-          src="/assets/img/icon/linkedin.png"
-          alt="img5"
-        />
-        <Image
-          width={40}
-          height={40}
-          src="/assets/img/icon/chevron.png"
-          alt="img6"
-        />
+        <Link href="/career/page4">
+          <Image
+            width={40}
+            height={40}
+            src="/assets/img/icon/close.png"
+            alt="img4"
+          />
+        </Link>
+        <Link href="/career/page5">
+          <Image
+            width={40}
+            height={40}
+            src="/assets/img/icon/linkedin.png"
+            alt="img5"
+          />
+        </Link>
+        <Link href="/career/page6">
+          <Image
+            width={40}
+            height={40}
+            src="/assets/img/icon/chevron.png"
+            alt="img6"
+          />
+        </Link>
       </div>
     </>
   );
