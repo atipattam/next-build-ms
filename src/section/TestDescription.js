@@ -8,7 +8,7 @@ function TestDescription(props) {
   return (
     <div>
       Description :
-      <Link href={`/career/${slug}-form`}>{data}</Link>   
+      <Link prefetch={false} href={`/career/${slug}-form`}>{data}</Link>   
        </div>
   );
 }

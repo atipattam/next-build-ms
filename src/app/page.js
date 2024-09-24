@@ -17,7 +17,7 @@ export default async function Home() {
           width: "100%",
         }}
       >
-        <Link href="/career/page1">
+        <Link prefetch={false} href="/career/page1">
           <Image
             width={40}
             height={40}
@@ -25,7 +25,7 @@ export default async function Home() {
             alt="img1"
           />
         </Link>
-        <Link href="/career/page2">
+        <Link prefetch={false} href="/career/page2">
         <Image
           width={40}
           height={40}
@@ -33,7 +33,7 @@ export default async function Home() {
           alt="img2"
         />
         </Link>
-        <Link href="/career/page3">
+        <Link prefetch={false} href="/career/page3">
         <Image
           width={40}
           height={40}
