@@ -1,3 +1,4 @@
 export default function myImageLoader({ src, width, quality }) {
-  return `${process.env.NEXT_APP_FRONTDOOR}${src}?w=${width}&q=${quality || 75}`
+  console.log(src)
+  return `${process.env.NEXT_APP_FRONTDOOR}${src}?myassets=arise&w=${width}&q=${quality || 75}`
 }
