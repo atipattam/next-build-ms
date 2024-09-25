@@ -1,7 +1,7 @@
 import { client } from "@/lib/serverAppInsight";
 import axios from "axios";
 
-export const getSomething = async () => {
+export const getSomething = async (slug) => {
   console.log("first");
 
   let allData = {};
@@ -15,7 +15,7 @@ export const getSomething = async () => {
     //   allData = _get(response, "data.data");
     // }
     client.trackEvent({
-      name: `success`,
+      name: `${slug} success`,
     })
   } catch (error) {
     // console.log(error)

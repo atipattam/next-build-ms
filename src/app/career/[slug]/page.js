@@ -49,7 +49,7 @@ export async function generateStaticParams() {
 
 export default async function Page2({ params }) {
   const { slug } = params;
-  await getSomething()
+  await getSomething(slug)
   let job = slug
   const splitSlug = slug.split("-");
   const isForm = _last(splitSlug) === "form";
