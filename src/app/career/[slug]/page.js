@@ -1,70 +1,85 @@
-import { getSomething } from "../../service/getSomething";
-import _forEach from "lodash/forEach";
-import _isEmpty from "lodash/isEmpty";
-import _last from "lodash/last";
-import _get from "lodash/get";
-import TestForm from "@/section/TestForm";
-import TestDescription from "@/section/TestDescription";
-import _find from "lodash/find";
-import { redirect } from "next/navigation";
+import _forEach from 'lodash/forEach'
+import _isEmpty from 'lodash/isEmpty'
+import _last from 'lodash/last'
+import _get from 'lodash/get'
+import { getCareerRoleName } from '../../../services/inquiry/careerRoleName'
 
-export const dynamicParams = true;
+// import PageNotFound from '@/app/not-found'
+import { getCareerList } from '../../../services/inquiry/careerList'
+import { JobDescription, JobForm } from '@/sections/career'
+import { redirect } from 'next/navigation'
 
-const myPage = [
-  {
-    id: "page1",
-    data: "data from page 1",
-  },
-  {
-    id: "page2",
-    data: "data from page 2",
-  },
-  {
-    id: "page3",
-    data: "data from page 3",
-  },
-  {
-    id: "page4",
-    data: "data from page 4",
-  },
-  {
-    id: "page5",
-    data: "data from page 5",
-  },
-  {
-    id: "page6",
-    data: "data from page 6",
-  },
-];
+export const dynamicParams = true
+
+// ISR configuration
+// Revalidate the page every 1 hours //
+export const revalidate = 3600
+
+async function getCareerRoleNameWithISR(title) {
+  const { allData: jobData, err } = await getCareerRoleName(title)
+  // console.log(jobData)
+  if (!jobData) {
+    console.log('Failed to fetch job data')
+  }
+  return { jobData, err }
+}
+
+async function fetchPostData() {
+  const res = await getCareerList()
+  return { data: res.data, err: res.err }
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = params
+  let roleName = slug
+  const splitSlug = slug.split('-')
+  const isForm = _last(splitSlug) === 'form'
+  if (isForm) {
+    roleName = slug.slice(0, -5)
+  }
+  const { jobData, err } = await getCareerRoleNameWithISR(roleName)
+
+  return {
+    title: `${jobData?.careerName}`,
+    description: 'Job description',
+  }
+}
 
 export async function generateStaticParams() {
-  const arr = [];
-
-  myPage.forEach((d) => {
-    arr.push({ slug: d.id });
-    arr.push({ slug: `${d.id}-form` });
-  });
-  return arr;
+  try {
+    const myParam = []
+    const { data, err } = await fetchPostData()
+    if (err) {
+      throw err
+    }
+    _forEach(data, (d) => {
+      myParam.push({ slug: d.param })
+      myParam.push({ slug: `${d.param}-form` })
+    })
+    return myParam
+  } catch (error) {
+    throw new Error('Generate static param from api list failed')
+  }
+  // This function will be used to pre-render these pages at build time.
 }
 
-export default async function Page2({ params }) {
-  const { slug } = params;
-  await getSomething(slug)
+export default async function CareerPage({ params }) {
+  const { slug } = params
   let job = slug
-  const splitSlug = slug.split("-");
-  const isForm = _last(splitSlug) === "form";
+  const splitSlug = slug.split('-')
+  const isForm = _last(splitSlug) === 'form'
   if (isForm) {
-    job = slug.slice(0, -5);
+    job = slug.slice(0, -5)
+  }
+  // Fetch job data using ISR
+  const { jobData, err } = await getCareerRoleNameWithISR(job)
+
+  if (_isEmpty(jobData) || err) {
+    redirect('/not-found')
   }
 
-  const find = _find(myPage, ["id", job]);
-
-  if (!find) {
-    redirect("/");
-  }
-
-  const data = find.data;
-  return isForm ? <TestForm data={data} /> : <TestDescription data={data} slug={slug}/>;
+  return (
+    isForm ? <JobForm slug={slug} title={_get(jobData, 'careerName')} id={_get(jobData, 'careerId')} portfolioRequired={_get(jobData, 'portfolioRequired')} />
+      : <JobDescription jobData={jobData} slug={slug} />
+  )
 }
-
-export const revalidate = 60;

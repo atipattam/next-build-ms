@@ -1,0 +1,20 @@
+.button {
+  &:disabled {
+    opacity: 0.35;
+  }
+}
+/* 
+.button:hover {
+  background: var(--mantine-color-lightBlue-2) !important;
+} */
+.button span {
+  overflow: visible;
+}
+
+.next-icon:hover {
+  transform: translateX(5px);
+}
+
+.prev-icon:hover {
+  transform: translateX(-5px);
+}

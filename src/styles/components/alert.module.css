@@ -1,0 +1,23 @@
+.root-error{
+  background-color: var(--mantine-color-error-0);
+  border-color: var(--mantine-color-error-4);
+}
+
+.label-error{
+  color:var(--mantine-color-error-3);
+  font-size: var(--mantine-font-size-md);
+
+}
+
+.icon-error, .close-error{
+  color: var(--mantine-color-error-3);
+}
+
+.icon-error{
+  margin-right : 8px;
+}
+
+.message-error{
+  color: var(--mantine-color-grayscale-6);
+  font-size: var(--mantine-font-size-sm);
+}

@@ -1,0 +1,402 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mobileImage {
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* Hide mobile image by default */
+}
+
+.bannerOverlay {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.topicTitle {
+  font-family: "KrungthaiFast", sans-serif;
+  font-size: 20px;
+  color: var(--light-blue3);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.textSizeHome {
+  font-family: "KrungthaiFastHeading", sans-serif;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.introContainer {
+  /* background: url("../../../public/assets/img/bg/about-intro-2.png") no-repeat
+    center center / cover; */
+  color: #fff;
+  position: relative;
+  /* padding: 60px 20px; */
+}
+
+.introTitle {
+  font-family: "KrungthaiFastHeading", sans-serif;
+  width: 350px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.introInner {
+  display: flex;
+  justify-content: center;
+}
+
+.introDesc {
+  font-size: 20px;
+  /* font-weight: 500; */
+  font-family: "KrungthaiFastWeb", sans-serif;
+  font-weight: 700;
+}
+
+.descMobile {
+  display: none;
+}
+/* mission start */
+
+.missionContainer {
+  padding: 80px 0;
+  position: relative;
+  /* background: url("../../../public/assets/img/bg/mission-bg.png") no-repeat
+    right bottom / 30%; */
+}
+
+.missionInner {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.missionImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.missionLeft {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.missionLeft h2 {
+  font-family: "KrungthaiFastHeading", sans-serif;
+  font-weight: 700;
+  color: #0082ef;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.missionLeft p {
+  font-family: "KrungthaiFastHeading", sans-serif;
+  font-size: 36px;
+  line-height: 2.8rem;
+  color: #032953;
+  font-weight: 700;
+}
+
+.missionDesc {
+  margin-top: 1rem;
+}
+
+.missionMargin {
+  margin-top: 1.3rem;
+}
+
+/* CoreValue */
+
+.coreValueContainer {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.coreValueHead {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 9%;
+  font-weight: 700;
+  font-family: "Krungthai Fast", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 10px;
+}
+
+/* .coreValueCardAgile {
+  height: 420px;
+  color: #fff;
+} */
+
+.coreValueCard {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  height: 420px;
+  padding-top: 7.5rem;
+}
+
+.coreValueTitle {
+  margin-top: 1rem;
+  font-family: "KrungthaiFastItalic", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.coreValueImg {
+  display: inline-block;
+  width: auto;
+  height: 60px;
+}
+
+.coreValueImgBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.CoreValueDesc {
+  font-family: "KrungthaiFast", sans-serif;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* Culture  */
+
+.cultureContainer {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.topicSubtitle {
+  font-family: "KrungthaiFast", sans-serif;
+  font-size: 20px;
+  color: #0082ef;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.cultureFlex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.cultureImg {
+  width: auto;
+  height: 80px;
+  display: inline-block;
+}
+
+.cultureTopicTitle {
+  font-size: 32px;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "KrungthaiFast", sans-serif;
+  font-weight: 700;
+  color: #032953;
+}
+
+.cultureDesc {
+  font-size: 20px;
+  color: #adbac7;
+  font-family: "KrungthaiFast", sans-serif;
+}
+
+/* career */
+
+.textSlogan {
+  font-size: 30px;
+  font-family: "KrungthaiFast", sans-serif;
+  font-weight: 700;
+  line-height: 3.5rem;
+}
+
+.careerImage {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  height: 220px;
+}
+
+.careerMobileImage {
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* Hide mobile image by default */
+}
+
+/* Media query for screens smaller than medium (768px) */
+
+@media screen and (width < 1200px) {
+  /* .introContainer {
+    background: url("../../../public/assets/img/bg/about-intro.png") no-repeat
+      center center / cover;
+  } */
+
+  .introInner {
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .introTitle {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .textSizeHome {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .introDesc {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 1.5rem;
+  }
+
+  .descDesktop {
+    display: none;
+  }
+
+  .descMobile{
+    display: block;
+  }
+  /* Mission */
+
+  .missionContainer {
+    padding: 60px 0;
+    /* position: relative; */
+    /* background: url("../../../public/assets/img/bg/mission-bg.png") no-repeat
+      right bottom / 30%; */
+  }
+
+  .missionInner {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
+  .missionTitle {
+    margin-top: 2rem;
+  }
+
+  .missionImage {
+    padding-top: 3rem;
+    border-radius: 0px;
+  }
+
+  .missionSubDesc {
+    padding-top: 3rem;
+  }
+
+  /* CoreValues */
+
+  .coreValueContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .coreValueHead {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.8%;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  /* Culture */
+
+  .cultureCard {
+    margin: 30px 0;
+  }
+
+  .cultureFlex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (width < 767px) {
+  .image,
+  .careerImage {
+    display: none;
+    /* Hide desktop image on small screens */
+  }
+
+  .textSlogan {
+    font-size: 40px;
+  }
+
+  .careerMobileImage {
+    height: 320px;
+    display: block;
+  }
+  .mobileImage {
+    display: block;
+  }
+}

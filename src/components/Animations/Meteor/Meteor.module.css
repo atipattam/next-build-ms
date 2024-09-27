@@ -1,0 +1,31 @@
+/* components/Meteor.module.css */
+.meteor {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(90deg, white, transparent);
+    top: 50%;
+    right: -150px; /* Align tail to the right */
+    transform: translateY(-50%) rotate(45deg); /* Rotate the tail to align with the movement */
+  }
+  
+  .meteoranimate {
+    animation: 3s linear infinite;
+  }
+  
+  @keyframes meteor {
+    0% {
+      top: -50px;
+      left: 100%;
+      transform: translate(0, 0) rotate(-45deg); /* Adjust angle to move from top-right to bottom-left */
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      left: -50px;
+      transform: translate(-200px, 200px) rotate(-45deg); /* Continue the same angle */
+      opacity: 0;
+    }
+  }

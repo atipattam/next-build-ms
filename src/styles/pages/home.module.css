@@ -1,0 +1,242 @@
+.full-width {
+  width: 100%
+}
+
+/*====================== Highlight START =======================*/
+.highlight-img {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.highlight-img:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('/assets/img/bg/video-filter.png') no-repeat center center / cover;
+  z-index: 1;
+}
+
+.highlight-img.no-filter::before {
+  display: none;
+}
+
+.highlight-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-img video {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .highlight-img {
+      height: 0;
+      padding-bottom: 51%;
+  }
+
+  .highlight-img video {
+      width: 100%;
+      height: auto;
+  }
+
+  .highlight-img img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+
+/*====================== Highlight END =======================*/
+
+/*====================== About arise START =======================*/
+/* .about-container{
+  position: relative;
+} */
+
+.about-arise-img-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.infinitasXaccenture {
+  width: 200px;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.about-link {
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  color: white;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* .about-link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.about-link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+} */
+
+/* .about-link:hover::after {
+  transform: scale(0);
+  transform-origin: center;
+} */
+
+.about-link-2 {
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(#ffffff 0 0);
+  background-position: center bottom;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+.about-link-2:hover {
+  transform: translateY(-2px);
+  background-size: 0% 1px;
+}
+@media screen and (min-width: 768px) {
+  .infinitasXaccenture {
+      width: 300px;
+  }
+
+  .arise {
+      height: 20px;
+      margin-top: -10px;
+      margin-right: 10px;
+  }
+
+  /* .about-link {
+      font-size: 18px;
+      margin-top: 20px;
+  } */
+  .about-link-2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+}
+/*====================== About arise END =======================*/
+
+/*====================== Benefit START =======================*/
+.benefit-img-background {
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  z-index: -1;
+}
+.benefit-container {
+  padding: 50px 0;
+  /* z-index: -1; */
+  /* background: url("/assets/img/bg/benefit-bg.png") no-repeat center center / cover; */
+  position: relative;
+}
+
+/* @media screen and (min-width: 768px) {
+  .benefit-container {
+      background-image: url("/assets/img/bg/benefit-bg-2.png");
+  }
+} */
+
+@media screen and (min-width: 1024px) {
+  .benefit-container {
+      padding: 70px 0;
+      overflow: hidden;
+  }
+}
+/*====================== Benefit END =======================*/
+
+/*====================== Position START =======================*/
+.position-container {
+  padding: 50px 20px;
+  position: relative;
+  /* background: url("/assets/img/bg/position-bg.png") no-repeat right bottom / 40%; */
+}
+
+/* @media screen and (min-width: 768px) {
+  .position-container {
+      background-image: url("/assets/img/bg/position-bg-2.png");
+  }
+} */
+
+@media screen and (min-width: 1024px) {
+  .position-container {
+    padding: 0;
+    background-size: 30%;  
+  }
+
+  .position-inner {
+    display: flex;
+    gap: 40px;
+    height: 750px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .position-inner {
+      gap: 0;
+  }
+}
+/*====================== Position END =======================*/
+
+.view-jobs-link {
+  font-size: 18px;
+  display: inline-block;
+  margin: 20px 0;
+  color: var(--mantine-color-lightBlue-2);
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.view-jobs-link:hover {
+  color: var(--mantine-color-lightBlue-2);
+}
+
+.view-jobs-link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--mantine-color-lightBlue-2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.2s ease-in-out;
+}
+
+.view-jobs-link:hover {
+  transform: translateY(-3px);
+}
+
+.view-jobs-link:hover::after {
+  width: 0;
+}

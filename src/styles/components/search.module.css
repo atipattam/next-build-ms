@@ -1,0 +1,11 @@
+
+.search-job input {
+  height: 45px;
+  &::placeholder {
+    color: var(--mantine-color-darkBlue-0);
+  }
+}
+/* 
+.search-job::placeholder {
+  color: var(--mantine-color-darkBlue-0)
+} */

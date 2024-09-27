@@ -1,0 +1,12 @@
+/* components/Backgroundzoom.module.css */
+.Backgroundzoom {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-image: url('/assets/img/logo/arise-logo.png'); /* Replace with your image path */
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  background-position: center;
+  background-attachment: fixed; /* Make the background fixed relative to the viewport */
+  transition: background-size 0.1s ease-out; /* Smooth transition for the zoom effect */
+}

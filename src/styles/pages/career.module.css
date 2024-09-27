@@ -1,0 +1,274 @@
+.introContainer {
+  /* background: url("/assets/img/bg/career-about-bg.png") no-repeat center center /
+    cover; */
+  color: #fff;
+  position: relative;
+  /* padding: 60px 20px; */
+}
+
+/*====================== Position START =======================*/
+.position-container {
+  padding: 50px 0 0;
+}
+
+.position-inner {
+  /* display: flex; */
+  padding-bottom: 40px;
+  background: url("/assets/img/bg/career-bg-2.png") no-repeat left bottom / 60%;
+}
+
+/*====================== Position END =======================*/
+
+.positionBg {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #091333;
+}
+
+.positionCard {
+  padding: 20px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: padding 0.3s ease-in-out;
+}
+
+.positionMinus {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.locationIcon {
+  width: 14px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.flexSub {
+  display: flex;
+  align-items: center;
+}
+
+.positionSubContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionFlex {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 2px solid rgb(240, 240, 240);
+  padding-bottom: 1.5rem;
+}
+
+.positionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0082ef;
+  margin-bottom: 8px;
+  line-height: 2rem;
+}
+
+.positionAddress {
+  font-size: 16px;
+  color: #032953;
+}
+
+.jobCard {
+  height: calc(100vh - 305px);
+  overflow-y: auto;
+  border-top: 2px solid var(--light-blue2);
+  padding: 24px;
+}
+
+.jobTitle {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #0082ef;
+  font-family: "KrungthaiFast", sans-serif;
+}
+
+.jobDesc {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #032953;
+}
+
+.ul {
+  padding-left: 2rem;
+}
+
+.qualification {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #0082ef;
+}
+
+.qualifications {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0082ef;
+  margin: 1rem 0;
+}
+
+.responsibility {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0082ef;
+  margin-bottom: 1rem;
+}
+
+.qualificationDesc {
+  color: #032953;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.descTest {
+  color: #032953;
+  font-weight: 500;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.join {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-top: 2px solid var(--light-blue2);
+  border-top: 2px solid rgb(240, 240, 240);
+}
+
+.joinLink {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    #88eeff,
+    #0082ef,
+    #a311ad,
+    #f22d4c,
+    #fcc83f
+  );
+  background-size: 300%;
+  background-position-x: 30%;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
+
+.joinLink:hover {
+  background-position-x: 100%;
+}
+
+/* Thankyou */
+
+.thankyou {
+  background: url("/assets/img/bg/form-bg-3.png") no-repeat top center / cover;
+  height: 560px;
+}
+
+.thankyouContainer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.popupInner {
+  height: 305px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  padding: 35px 10px 20px;
+}
+
+.thankyouTitle {
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 58px;
+  color: #0082ef;
+}
+
+.thankyouSubtitle {
+  font-size: 16px;
+  line-height: 24px;
+  color: #032953;
+  margin-bottom: 58px;
+}
+
+.benefitLink {
+  font-size: 18px;
+  width: 262px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    #88eeff,
+    #0082ef,
+    #a311ad,
+    #f22d4c,
+    #fcc83f
+  );
+  background-size: 300%;
+  background-position-x: 30%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.thankyouButton {
+  display: grid;
+  place-content: center;
+}
+
+.benefitLink:hover {
+  color: white;
+  background-position-x: 100%;
+}
+.benefitLink:where(:disabled):hover {
+  background-position-x: 30%;
+}
+
+@media screen and (min-width: 1024px) {
+  .position-container {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    background: url("/assets/img/bg/career-bg-2.png") no-repeat left bottom /
+      20%;
+  }
+
+  .position-inner {
+    /* display: flex; */
+    width: 100%;
+    height: 870px;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 100px 0;
+    background: none;
+  }
+}
