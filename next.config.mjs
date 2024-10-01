@@ -9,6 +9,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
+    missingSuspenseWithCSRBailout: false,
     serverActions: {
       bodySizeLimit: '15mb',
     },
