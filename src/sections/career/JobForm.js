@@ -268,26 +268,26 @@ function CareerSubmissionFormPage(props) {
       console.timeEnd('convertTobase64')
       // Call API to upload and submit form
       console.time('callServerApiCareerSubmission')
-      // const response = await fetch('/api/career-submission', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     formData,
-      //     fileData: base64Results,
-      //   }),
-      // })
+      const response = await fetch('/api/career-submission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formData,
+          fileData: base64Results,
+        }),
+      })
       console.timeEnd('start')
       const performanceEnd = performance.now()
       console.log('performance time log', performanceEnd - performanceStart)
 
-      const success = await careerFlow(formData, base64Results)
+      // const success = await careerFlow(formData, base64Results)
       console.timeEnd('callServerApiCareerSubmission')
 
       // const result = await response.json()
 
-      if (success) {
+      if (response.ok) {
         console.log('run 291')
         setIsError(false)
         // console.log('submission success:', result)
